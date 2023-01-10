@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="noteEdit.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="SVGs.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="note-area">
+            <input placeholder="Title" type="text" class="note-title-area">
+            <textarea placeholder="Text..." class="note-text-area"></textarea>
+        </div>
+        <div class="nav-bar">
+            <a href="index.html" onclick="save()">
+                <div class="nav-outer">
+                    <div class="nav-icon back-svg"></div>
+                    <div class="nav-text">Back</div>
+                </div>
+            </a>
+            <div class="nav-outer" onclick="save()">
+                <div class="nav-icon light-dark-svg"></div>
+                <div class="nav-text">Light Mode</div>
+            </div>
+            <div class="nav-outer" onclick="save()">
+                <div class="nav-icon light-dark-svg"></div>
+                <div class="nav-text">Save</div>
+            </div>
+        </div>
+    </body>
+</html>
