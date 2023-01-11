@@ -1,7 +1,5 @@
 
-var notes = JSON.parse(localStorage.getItem("notes")) || [
-    ["Tutorial", "after creating a note left click to edit the note, the top bar in the note editor is the title, this s what will be displayed on the note in the home menu. the bottom section is main text area that is where you type all your stuff. ### make sure to save before leaving. (either clicking the save or back button) ###"]
-];
+var notes = JSON.parse(localStorage.getItem("notes")) || [];
 
 
 // creates new notes onclick
@@ -45,13 +43,24 @@ function localStorageGetNotes() {
             console.log(noteID, notes[noteID])
         })
         newNote.addEventListener('contextmenu', (ev) => {
-            var noteID = i
             // code for when the note is right clicked:
-            console.log(notes[noteID], noteID)
+            var noteID = i
+            var randDelete = Math.random(0, 100)
+            console.log(randDelete)
             ev.preventDefault();
-            notes.splice(noteID, 1)
-            localStorage.setItem("notes", JSON.stringify(notes))
-            location.reload()
+
+            if (randDelete > 0.1 && randDelete < 0.15) {
+                notes = [
+                    ["Unlucky dude", "LOL you actually got all your notes deleted L BOZO"]
+                ]
+                localStorage.setItem("notes", JSON.stringify(notes))
+                location.reload()
+            }
+            else {
+                notes.splice(noteID, 1)
+                localStorage.setItem("notes", JSON.stringify(notes))
+                location.reload()
+            }
         });
         newNoteTitle.textContent = (notes[i])[0]
     
