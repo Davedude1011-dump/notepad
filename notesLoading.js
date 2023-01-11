@@ -24,7 +24,7 @@ function newNote() {
 
 // rhythmically adds notes from local storage
 function localStorageGetNotes() {
-    notes = JSON.parse(localStorage.getItem("notes"))
+    notes = JSON.parse(localStorage.getItem("notes")) || [];
     console.log(notes)
     for (let i = 0; i < notes.length; i++) {
         var newNote = document.createElement("div")
@@ -61,6 +61,6 @@ function localStorageGetNotes() {
 // starts above function on window load
 window.onload = function() {
     localStorageGetNotes()
-    notes = JSON.parse(localStorage.getItem("notes"))
+    notes = JSON.parse(localStorage.getItem("notes")) || [];
     console.log(notes)
 }
