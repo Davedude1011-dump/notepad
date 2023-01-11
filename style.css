@@ -38,6 +38,17 @@ body {
     translate: 0 -70%;
     cursor: pointer;
 }
+.nav-outer-right {
+    float: left;
+    position: absolute;
+    right: 5%;
+    margin-left: 5%;
+    height: 60%;
+    aspect-ratio: 1/1;
+    top: 50%;
+    translate: 0 -70%;
+    cursor: pointer;
+}
 .nav-icon {
     position: relative;
     left: 0;
@@ -147,4 +158,115 @@ body {
     font-family: sans-serif;
 
     resize: none;
+}
+
+
+@media screen and (orientation: portrait) {
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 6vh;
+        background-color: var(--bg-accent-color);
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    
+    .nav-outer {
+        float: left;
+        position: relative;
+        left: 5%;
+        margin-left: 5%;
+        height: 60%;
+        aspect-ratio: 1/1;
+        top: 50%;
+        translate: 0 -70%;
+        cursor: pointer;
+    }
+    .nav-outer-right {
+        float: left;
+        position: absolute;
+        right: 5%;
+        margin-left: 5%;
+        height: 60%;
+        aspect-ratio: 1/1;
+        top: 50%;
+        translate: 0 -70%;
+        cursor: pointer;
+    }
+    .nav-icon {
+        position: relative;
+        left: 0;
+        height: 90%;
+        aspect-ratio: 1/1;
+        top: 0;
+        left: 50%;
+        translate: -50%;
+    
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .nav-text {
+        position: relative;
+        color: var(--text-color);
+        bottom: 0;
+        font-size: 10px;
+        white-space: nowrap;
+        width: fit-content;
+        left: 50%;
+        translate: -50%;
+        margin-top: 5px;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+    
+    .note-area {
+        position: absolute;
+        width: 100vw;
+        height: 94vh;
+        bottom: 0;
+        left: 0;
+    
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1vw;
+    }
+    
+    .note {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        left: 0;
+        top: 0;
+        border-radius: 15px;
+    
+        width: 20vw;
+        height: 50vw;
+        border: var(--text-color) 2px dashed;
+    
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    .note:hover {
+        background-color: var(--note-hover-color);
+    }
+    .note-title {
+        position: absolute;
+        width: 90%;
+        height: fit-content;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        text-align: center;
+    
+        font-size: 15px;
+        font-weight: bold;
+        font-family: sans-serif;
+        color: var(--text-color);
+        user-select: none;
+    }
 }

@@ -22,6 +22,25 @@ function newNote() {
     location.reload()
 }
 
+//creates a help note when help button pressed:
+function createHelpNote() {
+    notes.unshift(["Help Note", `To create a note click "New Note", this will create a note block, click the note block to enter the edit area (where you are right now).
+
+The top box of the edit area is the title, it will be displayed in the note block in the note selection area (where you where before here).
+
+To save the note click the Save button or Back Button.
+
+If you enjoy burning your eyes you can click the Light Mode button to switch between dark and light mode.
+
+In the note selection area if you (right click for pc) (hold click for mobile) it will delete the note, currently there is no undo so BEWARE.
+
+And if you want to see more of my content click the Davedude101 button, (the frog doesn't bite, at least i think so).
+    `])
+    localStorage.setItem("notes", JSON.stringify(notes))
+    location.reload()
+
+}
+
 // rhythmically adds notes from local storage
 function localStorageGetNotes() {
     notes = JSON.parse(localStorage.getItem("notes")) || [];
@@ -45,22 +64,11 @@ function localStorageGetNotes() {
         newNote.addEventListener('contextmenu', (ev) => {
             // code for when the note is right clicked:
             var noteID = i
-            var randDelete = Math.random(0, 100)
-            console.log(randDelete)
             ev.preventDefault();
 
-            if (randDelete > 0.1 && randDelete < 0.15) {
-                notes = [
-                    ["Unlucky dude", "LOL you actually got all your notes deleted L BOZO"]
-                ]
-                localStorage.setItem("notes", JSON.stringify(notes))
-                location.reload()
-            }
-            else {
-                notes.splice(noteID, 1)
-                localStorage.setItem("notes", JSON.stringify(notes))
-                location.reload()
-            }
+            notes.splice(noteID, 1)
+            localStorage.setItem("notes", JSON.stringify(notes))
+            location.reload()
         });
         newNoteTitle.textContent = (notes[i])[0]
     
