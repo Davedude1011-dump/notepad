@@ -1,5 +1,5 @@
 
-var notes = JSON.parse(localStorage.getItem("notes"))
+var notes = JSON.parse(localStorage.getItem("notes")) || [];
 
 
 // creates new notes onclick
