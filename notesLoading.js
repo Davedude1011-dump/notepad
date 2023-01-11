@@ -1,5 +1,7 @@
 
-var notes = JSON.parse(localStorage.getItem("notes")) || [];
+var notes = JSON.parse(localStorage.getItem("notes")) || [
+    ["Tutorial", "after creating a note left click to edit the note, the top bar in the note editor is the title, this s what will be displayed on the note in the home menu. the bottom section is main text area that is where you type all your stuff. ### make sure to save before leaving. (either clicking the save or back button) ###"]
+];
 
 
 // creates new notes onclick
